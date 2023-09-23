@@ -1,0 +1,50 @@
+project: rfam-benchmark
+data-directory-local: /Users/rahulnatarajan/Dropbox/interaction-data/
+data-directory-ec2: /home/ubuntu/Dropbox/interaction-data/
+plot_dir: plots/
+annotation_dir: annotations/
+spreadsheets_dir: spreadsheets/
+
+
+output_dir: output/
+
+dataset: recapture_virus # virus/bacteria/malaria/recapture_virus/new_bacteria/new_malaria/new_virus
+neg: True
+
+bacteria_dir: bacteria_data/
+virus_dir: virus_data/
+malaria_dir: malaria_data/
+
+model: mlp
+
+# metrics
+build-interaction-distribution: False
+spreadsheet: False
+ens-id-output: False
+automatically-annotate: False
+score-distribution: True
+
+# manual 
+manual-annotated: True
+
+# from abstract scores
+manual-interaction: False
+
+# font-family information
+font-size: 10
+font-family: Arial
+
+# train-metrics
+shap-summary: False
+box-plot: True
+output-diff: False
+confusion-matrix: False
+use-all-data: False
+grid-search-plot: False
+
+epochs: 215
+trials: 10
+
+TOKEN_MODE: word
+MIN_DOCUMENT_FREQUENCY: 2
+TOP_K: 20000

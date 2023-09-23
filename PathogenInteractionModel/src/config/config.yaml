@@ -1,0 +1,99 @@
+project: bert-interaction
+
+# data directories
+data-directory-local: /Users/rahulnatarajan/Dropbox/interaction-data/
+data-directory-ec2: /home/ubuntu/Dropbox/interaction-data/
+
+random_state: 42
+
+# datasets (bacteria, virus, malaria)
+train_datasets: [virus]
+test_datasets: [virus]
+dataset_to_predict: virus
+
+# model parameters
+pretrained_model: pretrained_models/
+max_seq_length: 1
+batch_size: 8
+embedding_model_size: 1024
+balance_dataset: True
+ratio: 1 #1/2.35
+train_ratio: 1.0
+test_ratio: 1.0
+
+# model hyperparameters
+epochs: 100
+learning_rate: 0.0001
+alpha: 0.01
+beta: 0.0
+weight_decay: 0.0001
+early_stopping: True
+min_delta: 0.01
+tolerance: 5
+
+# train-test-split
+test-train-split: 0.2
+val-train-split: 0.2
+
+
+# scale
+scale: True
+
+# pca-dim
+pca-dim: 100
+
+# embed pipeline
+embedding_model: tfidf # bluebert/tfidf
+should_generate_embeddings: False
+
+# data preprocess
+should_create_frame: False
+
+# train pipeline
+model: mlp # bluebert/mlp
+model_save_path: saved_models/
+save_checkpoint: False
+save_model: False
+
+# transfer learning
+run_all_combinations: True
+
+# subdirectories
+plot_dir: plots/
+annotation_dir: annotations/
+spreadsheets_dir: spreadsheets/
+output_dir: output/
+bacteria_dir: bacteria_data/
+virus_dir: virus_data/
+malaria_dir: malaria_data/
+metrics_dir: metrics/
+
+# metrics
+build-interaction-distribution: False
+spreadsheet: False
+ens-id-output: True
+automatically-annotate: False
+
+# manual 
+manual-annotated: True
+
+# from abstract scores
+manual-interaction: False
+
+# font-family information
+font-size: 10
+font-family: Arial
+
+# train-metrics
+shap-summary: False
+box-plot: True
+output-diff: False
+confusion-matrix: False
+use-all-data: False
+grid-search-plot: False
+
+trials: 10
+
+TOKEN_MODE: word
+MIN_DOCUMENT_FREQUENCY: 2
+TOP_K: 20000
